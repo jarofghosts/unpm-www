@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <h1>{{ name }}</h1>
+    <p>
+      {{ description }}
+    </p>
+    <div class="package-info">
+      <strong>Version</strong> {{ version }}<br>
+      <strong>Dependencies</strong>
+      <ul altr-for="dep in dependencies">
+        <li>
+        <a href="/package/{{ dep.name }}">{{ dep.name }}</a> @ {{ dep.version }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="package-readme">
+      {{ readme }}
+    </div>
+  </body>
+</html>
