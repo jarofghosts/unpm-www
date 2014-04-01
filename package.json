@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "unpm-router": "0.0.2",
-    "filed": "^0.1.0",
-    "request": "^2.34.0"
+    "filed": "0.1.0",
+    "request": "2.34.0",
+    "altr": "0.0.12"
   }
 }
