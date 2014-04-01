@@ -1,23 +1,26 @@
 var path = require('path')
+  , http = require('http')
 
-var router = require('./routes/setup')
+var errors = require('./routes/errors')
+  , router = require('./routes/setup')
   , filed = require('filed')
+
+var config = {}
 
 module.exports = unpm_www
 
-function unpm_www(port) {
+function unpm_www(port, registry) {
+  config.registry = registry || 'http://localhost:8123'
+
   http.createServer(handler).listen(port)
 
   function handler(req, res) {
     var route = router.match(req)
 
-    if(!route) return not_found(res)
+    if(!route) return errors.not_found(res)
 
-    route.fn(req, res, router)
+    route.fn(req, res, route, config)
   }
 }
 
-function not_found(res) {
-  res.writeHead(404)
-  filed(path.join(__dirname, 'static', 'errors', '404.html')).pipe(res)
-}
+return unpm_www(8099, 'http://registry.npmjs.org')
