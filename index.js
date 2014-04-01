@@ -17,7 +17,7 @@ function unpm_www(port, registry) {
   function handler(req, res) {
     var route = router.match(req)
 
-    if(!route) return errors.not_found(res)
+    if(!route) return errors.not_found(req, res)
 
     route.fn(req, res, route, config)
   }

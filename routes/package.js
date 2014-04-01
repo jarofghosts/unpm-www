@@ -28,7 +28,7 @@ function serve_package(req, res, route, config) {
   http.get(endpoint, parse_response)
 
   function parse_response(response) {
-    if(response.statusCode === 400) return errors.not_found(req, res)
+    if(response.statusCode === 404) return errors.not_found(req, res)
 
     response.pipe(concat(parse_package))
 
