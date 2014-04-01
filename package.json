@@ -32,7 +32,9 @@
   "dependencies": {
     "unpm-router": "0.0.2",
     "filed": "0.1.0",
-    "request": "2.34.0",
-    "altr": "0.0.12"
+    "altr": "0.0.12",
+    "hyperquest": "0.3.0",
+    "through": "2.3.4",
+    "concat-stream": "1.4.4"
   }
 }
