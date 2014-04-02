@@ -10,12 +10,14 @@
     </p>
     <div class="package-info">
       <strong>Version</strong> {{ version }}<br>
-      <strong>Dependencies</strong>
-      <ul altr-for="dep in dependencies">
-        <li>
-          <a href="/package/{{ dep.name }}">{{ dep.name }}</a> @ {{ dep.version }}
-        </li>
-      </ul>
+      <div nope-altr-if="dependencies.length">
+        <strong>Dependencies</strong>
+        <ul altr-for="dep in dependencies">
+          <li>
+            <a href="/package/{{ dep.name }}">{{ dep.name }}</a> @ {{ dep.version }}
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="package-readme">

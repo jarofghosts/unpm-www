@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "web frontend for unpm",
   "main": "index.js",
+  "bin": {
+    "unpm-www": "./bin/unpm-www"
+  },
   "directories": {
     "test": "test"
   },
