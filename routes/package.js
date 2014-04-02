@@ -26,7 +26,9 @@ function serve_package(req, res, route, config) {
     , agent: false
   }
 
-  http.get(endpoint, parse_response)
+  http.get(endpoint, parse_response).on('error', function() {
+    errors.server_error(req, res)
+  })
 
   function parse_response(response) {
     if(response.statusCode === 404) return errors.not_found(req, res)

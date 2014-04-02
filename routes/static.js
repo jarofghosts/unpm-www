@@ -4,7 +4,7 @@ var filed = require('filed')
 module.exports = serve_static
 
 function serve_static(req, res, route) {
-  var file_path = route.splats.join('.')
+  var file_path = route.splats ? route.splats.join('.') : 'index.html'
 
   filed(path.join(__dirname, '..', 'static', file_path)).pipe(res)
 }

@@ -9,9 +9,7 @@ var config = {}
 
 module.exports = unpm_www
 
-function unpm_www(_port, _registry) {
-  var port = _port || 8999
-
+function unpm_www(_registry) {
   config.registry = _registry || 'http://localhost:8123'
 
   return http.createServer(handler)
