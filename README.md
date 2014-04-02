@@ -18,6 +18,14 @@ a web frontend for &mu;npm
 
 ## as a module
 
+yep, you can do that
+
+```js
+var www = require('unpm-www')
+
+www(8999, 'http://registry.npmjs.org') // tada
+```
+
 ## license
 
 MIT
