@@ -14,9 +14,7 @@ function unpm_www(_port, _registry) {
 
   config.registry = _registry || 'http://localhost:8123'
 
-  http.createServer(handler).listen(port)
-
-  console.log('unpm-www listening on ' + port)
+  return http.createServer(handler)
 
   function handler(req, res) {
     var route = router.match(req)

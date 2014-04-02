@@ -23,7 +23,8 @@ yep, you can do that
 ```js
 var www = require('unpm-www')
 
-www(8999, 'http://registry.npmjs.org') // tada
+var server = www('http://registry.npmjs.org') // defaults to 'http://localhost:8123'
+server.listen(8999) // tada!
 ```
 
 ## license

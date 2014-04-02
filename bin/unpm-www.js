@@ -26,7 +26,7 @@ var options = nopt(noptions, shorts)
 if(options.version) return version()
 if(options.help) return help()
 
-www(options.port, options.registry)
+www(options.registry).listen(options.port || 8999)
 
 function version() {
   console.log(package.name + ' version ' + package.version)
