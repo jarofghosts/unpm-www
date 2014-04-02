@@ -8,18 +8,43 @@
     <p>
       {{ description }}
     </p>
-    <div class="package-info">
-      <strong>Version</strong> {{ version }}<br>
-      <div nope-altr-if="dependencies.length">
-        <strong>Dependencies</strong>
-        <ul altr-for="dep in dependencies">
-          <li>
-            <a href="/package/{{ dep.name }}">{{ dep.name }}</a> @ {{ dep.version }}
-          </li>
-        </ul>
-      </div>
-    </div>
+    <h2>Details</h2>
+    <table class="package-info">
+      <tr>
+        <td><strong>Author</strong></td>
+        <td>{{ author }}</td>
+      </tr>
+      <tr>
+        <td><strong>Version</strong></td>
+        <td>{{ version }}</td>
+      </tr>
+      <tr>
+        <td><strong>Dependencies</strong></td>
+        <td>
+          <ul altr-for="dep in dependencies">
+            <li>
+              <a href="/package/{{ dep.name }}">{{ dep.name }}</a> @ {{ dep.version }}
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Repository</strong></td>
+        <td>
+          <a href="{{ repository_www }}">{{ repository }}</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Created</strong></td>
+        <td>{{ created }}
+      </tr>
+      <tr>
+        <td><strong>Last Updated</strong></td>
+        <td>{{ last_modified }}</td>
+      </tr>
+    </table>
 
+    <h2>Readme</h2>
     <div class="package-readme">
       {{ readme }}
     </div>
