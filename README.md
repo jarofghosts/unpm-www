@@ -12,7 +12,8 @@ a web frontend for &mu;npm
 `unpm-www`
 
 * `--port, -p <port>` Listen on `<port>`, defaults to `8999`
-* `--registry, -r <registry>` Use `<registry>` for package data
+* `--registry, -r <registry>` Use `<registry>` for package data, defaults to
+'http://localhost:8123'
 * `--version, -v` Print version information
 * `--help, -h` Print help text
 
