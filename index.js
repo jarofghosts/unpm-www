@@ -3,7 +3,6 @@ var path = require('path')
 
 var errors = require('./routes/errors')
   , router = require('./routes/setup')
-  , filed = require('filed')
 
 var config = {}
 
