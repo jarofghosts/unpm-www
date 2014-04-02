@@ -9,10 +9,14 @@ var config = {}
 
 module.exports = unpm_www
 
-function unpm_www(port, registry) {
-  config.registry = registry || 'http://localhost:8123'
+function unpm_www(_port, _registry) {
+  var port = _port || 8999
+
+  config.registry = _registry || 'http://localhost:8123'
 
   http.createServer(handler).listen(port)
+
+  console.log('unpm-www listening on ' + port)
 
   function handler(req, res) {
     var route = router.match(req)
@@ -22,5 +26,3 @@ function unpm_www(port, registry) {
     route.fn(req, res, route, config)
   }
 }
-
-return unpm_www(8099, 'http://registry.npmjs.org')
