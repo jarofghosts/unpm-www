@@ -1,7 +1,7 @@
 www-&mu;npm
 ====
 
-a web frontend for &mu;npm
+a web frontend for [&mu;npm](https://github.com/hayes/unpm)
 
 ## installation
 
@@ -27,6 +27,10 @@ var www = require('unpm-www')
 var server = www('http://registry.npmjs.org') // defaults to 'http://localhost:8123'
 server.listen(8999) // tada!
 ```
+
+## notes
+
+works with any npm-compatible registry.
 
 ## license
 
