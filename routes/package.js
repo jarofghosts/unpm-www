@@ -7,6 +7,7 @@ var concat = require('concat-stream')
   , altr = require('altr')
 
 var packagify = require('../lib/packagify')
+  , readmeify = require('../lib/readmeify')
   , errors = require('./errors')
 
 var package_template = '' + fs.readFileSync(
@@ -43,8 +44,15 @@ function serve_package(req, res, route, config) {
 
       package_data = packagify(package_data)
 
-      res.writeHead(200, {'content-type': 'text/html'})
-      res.end('' + altr(package_template, package_data))
+      readmeify(package_data.readme, write_response)
+
+      function write_response(err, html) {
+        if(err) return errors.server_error(req, res)
+        package_data.readme = html
+
+        res.writeHead(200, {'content-type': 'text/html'})
+        res.end('' + altr(package_template, package_data))
+      }
     }
   }
 }
