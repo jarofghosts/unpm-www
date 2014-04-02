@@ -45,6 +45,7 @@ function serve_package(req, res, route, config) {
       }
 
       package_data = packagify(package_data)
+      package_data.registry = config.registry
 
       readmeify(package_data.readme, write_response)
 

@@ -10,7 +10,7 @@ module.exports = {
 
 function make_response(code) {
   return function serve_error(req, res) {
-    res.writeHead(code)
+    res.writeHead(code, {'content-type': 'text/html'})
     fs.createReadStream(path.join(static_dir, code + '.html')).pipe(res)
   }
 }
