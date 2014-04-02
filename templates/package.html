@@ -18,7 +18,7 @@
         <td><strong>Version</strong></td>
         <td>{{ version }}</td>
       </tr>
-      <tr>
+      <tr altr-if="dependencies.length">
         <td><strong>Dependencies</strong></td>
         <td>
           <ul altr-for="dep in dependencies">

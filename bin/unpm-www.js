@@ -22,12 +22,15 @@ var shorts = {
 }
 
 var options = nopt(noptions, shorts)
+  , port
 
 if(options.version) return version()
 if(options.help) return help()
 
-www(options.registry).listen(options.port || 8999)
-console.log('unpm-www listening on port ' + (options.port || 8199))
+port = options.port || 8999
+
+www(options.registry).listen(port)
+console.log('unpm-www listening on port ' + port)
 
 function version() {
   console.log(package.name + ' version ' + package.version)
