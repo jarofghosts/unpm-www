@@ -27,6 +27,7 @@ if(options.version) return version()
 if(options.help) return help()
 
 www(options.registry).listen(options.port || 8999)
+console.log('unpm-www listening on port ' + (options.port || 8199))
 
 function version() {
   console.log(package.name + ' version ' + package.version)
