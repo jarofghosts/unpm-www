@@ -28,6 +28,32 @@ var server = www('http://registry.npmjs.org') // defaults to 'http://localhost:8
 server.listen(8999) // tada!
 ```
 
+## extending
+
+you are given access to the router for you to add your own routes if you would
+like. or override them.
+
+`router` is an instance of [unpm-router](http://npm.im/unpm-router), which
+works pretty much like you would expect a router to.
+
+something like this:
+
+```js
+var www = require('unpm-www')
+
+var router = www.router
+
+router.add('get', '/ping', ping)
+
+www().listen(1337)
+
+function ping(req, res, route, config) {
+  // route holds information like [routes](http://npm.im/routes)
+  // config is a configuration object, currently with one key "registry"
+  res.end('pong')
+}
+```
+
 ## notes
 
 works with any npm-compatible registry.
