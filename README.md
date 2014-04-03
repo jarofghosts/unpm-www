@@ -48,11 +48,12 @@ router.add('get', '/ping', ping)
 www().listen(1337)
 
 function ping(req, res, route, config) {
-  // route holds information like [routes](http://npm.im/routes)
-  // config is a configuration object, currently with one key "registry"
   res.end('pong')
 }
 ```
+
+`route` holds information like [routes](http://npm.im/routes)
+`config` is a configuration object, currently with one key: "registry"
 
 ## notes
 
