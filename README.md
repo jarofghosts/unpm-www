@@ -52,8 +52,8 @@ function ping(req, res, route, config) {
 }
 ```
 
-`route` holds information like [routes](http://npm.im/routes)
-`config` is a configuration object, currently with one key: "registry"
+* `route` holds information like [routes](http://npm.im/routes)
+* `config` is a configuration object, currently with one key: "registry"
 
 ## notes
 
