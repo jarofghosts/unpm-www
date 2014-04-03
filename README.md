@@ -1,4 +1,4 @@
-www-&mu;npm
+&mu;npm-www
 ====
 
 a web frontend for [&mu;npm](https://github.com/hayes/unpm)

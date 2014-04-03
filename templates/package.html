@@ -1,10 +1,12 @@
 <html>
   <head>
-    <title>{{ name }} < {{ registry }}</title>
+    <title>{{ name }} &lt; {{ registry }}</title>
     <link rel="stylesheet" href="/css/package.css">
     <link rel="stylesheet" href="/css/github.css">
   </head>
   <body>
+    <header altr-include="header">
+    </header>
     <h1>{{ name }}</h1>
     <p>
       {{ description }}
@@ -43,11 +45,21 @@
         <td><strong>Last Updated</strong></td>
         <td>{{ last_modified }}</td>
       </tr>
+      <tr altr-if="keywords.length">
+        <td><strong>Keywords</strong></td>
+        <td>
+          <ul altr-for="keyword in keywords">
+            <li>{{ keyword }}</li>
+          </ul>
+        </td>
+      </tr>
     </table>
 
     <h2>Readme</h2>
     <div class="package-readme">
       {{ readme }}
     </div>
+    <footer altr-include="footer">
+    </footer>
   </body>
 </html>

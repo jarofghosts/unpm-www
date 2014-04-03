@@ -6,6 +6,7 @@ var errors = require('./routes/errors')
 
 var config = {}
 
+unpm_www.router = router
 module.exports = unpm_www
 
 function unpm_www(_registry) {

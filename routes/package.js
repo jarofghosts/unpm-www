@@ -1,18 +1,14 @@
 var http = require('http')
-  , path = require('path')
   , url = require('url')
-  , fs = require('fs')
 
 var concat = require('concat-stream')
-  , altr = require('altr')
 
 var packagify = require('../lib/packagify')
   , readmeify = require('../lib/readmeify')
+  , template = require('../lib/template')
   , errors = require('./errors')
 
-var package_template = altr('' + fs.readFileSync(
-    path.resolve(__dirname, '..', 'templates', 'package.html')
-))
+var package_template = template('package')
 
 module.exports = serve_package
 

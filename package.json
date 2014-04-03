@@ -29,17 +29,16 @@
     "url": "https://github.com/jarofghosts/unpm-www/issues"
   },
   "homepage": "https://github.com/jarofghosts/unpm-www",
-  "devDependencies": {
-    "beefy": "^1.1.0",
-    "browserify": "^3.37.1"
-  },
   "dependencies": {
     "unpm-router": "0.0.2",
     "filed": "0.1.0",
-    "altr": "0.0.15",
+    "altr": "0.0.22",
     "concat-stream": "1.4.4",
     "marked": "0.3.2",
     "highlight.js": "8.0.0",
     "nopt": "2.2.0"
+  },
+  "devDependencies": {
+    "tape": "^2.12.2"
   }
 }
