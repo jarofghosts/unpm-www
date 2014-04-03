@@ -55,6 +55,15 @@ function ping(req, res, route, config) {
 * `route` holds information like [routes](http://npm.im/routes)
 * `config` is a configuration object, currently with one key: "registry"
 
+or if you are feeling super DIY:
+
+```js
+var www = require('unpm-www')
+
+www.config.registry = 'http://registry.nodejitsu.com'
+http.createServer(www.handler).listen(4400)
+```
+
 ## notes
 
 works with any npm-compatible registry.
