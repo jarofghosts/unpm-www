@@ -41,11 +41,11 @@ something like this:
 ```js
 var www = require('unpm-www')
 
+www().listen(1337)
+
 var router = www.router
 
 router.add('get', '/ping', ping)
-
-www().listen(1337)
 
 function ping(req, res, route, config) {
   res.end('pong')
@@ -61,6 +61,7 @@ or if you are feeling super DIY:
 var www = require('unpm-www')
 
 www.config.registry = 'http://registry.nodejitsu.com'
+www.router() // optionally accepts a prefix
 http.createServer(www.handler).listen(4400)
 ```
 

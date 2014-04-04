@@ -10,12 +10,14 @@ var package = require('../package.json')
 
 var noptions = {
     port: Number
+  , prefix: String
   , registry: String
   , help: Boolean
 }
 
 var shorts = {
     p: ['--port']
+  , P: ['--prefix']
   , r: ['--registry']
   , h: ['--help']
   , v: ['--version']

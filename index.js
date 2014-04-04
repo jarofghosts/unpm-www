@@ -11,8 +11,11 @@ unpm_www.handler = handler
 unpm_www.config = config
 module.exports = unpm_www
 
-function unpm_www(_registry) {
+function unpm_www(_registry, _prefix) {
   config.registry = _registry || 'http://localhost:8123'
+  config.prefix = _prefix
+
+  router = router(_prefix)
 
   return http.createServer(handler)
 }

@@ -11,7 +11,8 @@
   },
   "scripts": {
     "test": "tape test/*.test.js",
-    "start": "node bin/unpm-www.js"
+    "start": "node bin/unpm-www.js",
+    "dev": "jung -D node_modules -k -R -- node bin/unpm-www.js -r http://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "nopt": "2.2.0"
   },
   "devDependencies": {
-    "tape": "^2.12.2"
+    "tape": "2.12.2",
+    "jung": "1.2.2"
   }
 }
