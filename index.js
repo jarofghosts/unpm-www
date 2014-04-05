@@ -15,7 +15,7 @@ function unpm_www(_registry, _prefix) {
   config.registry = _registry || 'http://localhost:8123'
   config.prefix = _prefix
 
-  router = router(_prefix)
+  router.root = _prefix || ''
 
   return http.createServer(handler)
 }

@@ -41,8 +41,6 @@ something like this:
 ```js
 var www = require('unpm-www')
 
-www().listen(1337)
-
 var router = www.router
 
 router.add('get', '/ping', ping)
@@ -50,20 +48,12 @@ router.add('get', '/ping', ping)
 function ping(req, res, route, config) {
   res.end('pong')
 }
+
+www().listen(1337)
 ```
 
 * `route` holds information like [routes](http://npm.im/routes)
 * `config` is a configuration object, currently with one key: "registry"
-
-or if you are feeling super DIY:
-
-```js
-var www = require('unpm-www')
-
-www.config.registry = 'http://registry.nodejitsu.com'
-www.router() // optionally accepts a prefix
-http.createServer(www.handler).listen(4400)
-```
 
 ## notes
 
