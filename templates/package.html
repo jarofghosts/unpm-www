@@ -37,11 +37,11 @@
           <a href="{{ repository_www }}">{{ repository }}</a>
         </td>
       </tr>
-      <tr>
+      <tr altr-if="created">
         <td><strong>Created</strong></td>
         <td>{{ created }}
       </tr>
-      <tr>
+      <tr altr-if="last_modified">
         <td><strong>Last Updated</strong></td>
         <td>{{ last_modified }}</td>
       </tr>
