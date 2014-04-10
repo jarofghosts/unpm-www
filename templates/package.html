@@ -4,9 +4,8 @@
     <link rel="stylesheet" href="{{ config.prefix }}css/package.css">
     <link rel="stylesheet" href="{{ config.prefix }}css/github.css">
   </head>
+    {{>header}}
   <body>
-    <header altr-include="header">
-    </header>
     <h1>{{ name }}</h1>
     <p>
       {{ description }}
@@ -21,46 +20,57 @@
         <td><strong>Version</strong></td>
         <td>{{ version }}</td>
       </tr>
-      <tr altr-if="dependencies.length">
+      {{#dependencies.length}}
+      <tr>
         <td><strong>Dependencies</strong></td>
         <td>
-          <ul altr-for="dep in dependencies">
+          <ul>
+            {{#dependencies}}
             <li>
-            <a href="{{ config.prefix }}package/{{ dep.name }}">{{ dep.name }}</a>
-            @ {{ dep.version }}
+            <a href="{{ config.prefix }}package/{{ name }}">{{ name }}</a>
+            @ {{ version }}
             </li>
+            {{/dependencies}}
           </ul>
         </td>
       </tr>
+      {{/dependencies.length}}
       <tr>
         <td><strong>Repository</strong></td>
         <td>
           <a href="{{ repository_www }}">{{ repository }}</a>
         </td>
       </tr>
-      <tr altr-if="created">
+      {{#created}}
+      <tr>
         <td><strong>Created</strong></td>
         <td>{{ created }}
       </tr>
-      <tr altr-if="last_modified">
+      {{/created}}
+      {{#last_modified}}
+      <tr>
         <td><strong>Last Updated</strong></td>
         <td>{{ last_modified }}</td>
       </tr>
-      <tr altr-if="keywords.length">
+      {{/last_modified}}
+      {{#keywords.length}}
+      <tr>
         <td><strong>Keywords</strong></td>
         <td>
-          <ul altr-for="keyword in keywords">
-            <li>{{ keyword }}</li>
+          <ul>
+            {{#keywords}}
+            <li>{{ . }}</li>
+            {{/keywords}}
           </ul>
         </td>
       </tr>
+      {{/keywords.length}}
     </table>
 
     <h2>Readme</h2>
     <div class="package-readme">
-      {{ readme }}
+      {{{ readme }}}
     </div>
-    <footer altr-include="footer">
-    </footer>
+    {{>footer}}
   </body>
 </html>

@@ -33,11 +33,11 @@
   "dependencies": {
     "unpm-router": "0.0.2",
     "filed": "0.1.0",
-    "altr": "0.0.34",
     "concat-stream": "1.4.4",
     "marked": "0.3.2",
     "highlight.js": "8.0.0",
-    "nopt": "2.2.0"
+    "nopt": "2.2.0",
+    "mustache": "0.8.1"
   },
   "devDependencies": {
     "tape": "2.12.2",

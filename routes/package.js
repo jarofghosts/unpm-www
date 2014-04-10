@@ -52,10 +52,8 @@ function serve_package(req, res, route, config) {
         if(err) return errors.server_error(req, res)
         package_data.readme = html
 
-        package_template.update(package_data)
-
         res.writeHead(200, {'content-type': 'text/html'})
-        res.end('' + package_template)
+        res.end(package_template(package_data))
       }
     }
   }

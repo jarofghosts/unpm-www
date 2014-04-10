@@ -25,6 +25,12 @@ function unpm_www(_registry, _prefix) {
 function handler(req, res) {
   var route = router.match(req)
 
+  res.setHeader('x-frame-options', 'deny')
+  res.setHeader(
+      'content-security-policy'
+    , "default-src 'self'; img-src *; frame-src 'none'; object-src 'none'"
+  )
+
   if(!route) return errors.not_found(req, res)
 
   route.fn(req, res, route, config)
