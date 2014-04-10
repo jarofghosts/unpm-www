@@ -1,8 +1,8 @@
 <html>
   <head>
     <title>{{ name }} &lt; {{ registry }}</title>
-    <link rel="stylesheet" href="../css/package.css">
-    <link rel="stylesheet" href="../css/github.css">
+    <link rel="stylesheet" href="{{ config.prefix }}css/package.css">
+    <link rel="stylesheet" href="{{ config.prefix }}css/github.css">
   </head>
   <body>
     <header altr-include="header">
@@ -26,7 +26,8 @@
         <td>
           <ul altr-for="dep in dependencies">
             <li>
-              <a href="{{ dep.name }}">{{ dep.name }}</a> @ {{ dep.version }}
+            <a href="{{ config.prefix }}package/{{ dep.name }}">{{ dep.name }}</a>
+            @ {{ dep.version }}
             </li>
           </ul>
         </td>

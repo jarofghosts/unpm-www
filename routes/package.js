@@ -15,10 +15,12 @@ module.exports = serve_package
 function serve_package(req, res, route, config) {
   var registry = url.parse(config.registry)
 
+  var endpoint_path = '/' + route.params.name
+
   var endpoint = {
       hostname: registry.hostname
     , port: registry.port || 80
-    , path: '/' + route.params.name
+    , path: endpoint_path
     , agent: false
   }
 
@@ -42,6 +44,7 @@ function serve_package(req, res, route, config) {
 
       package_data = packagify(package_data)
       package_data.registry = config.registry
+      package_data.config = {prefix: config.prefix}
 
       readmeify(package_data.readme, write_response)
 

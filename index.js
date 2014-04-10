@@ -13,7 +13,9 @@ module.exports = unpm_www
 
 function unpm_www(_registry, _prefix) {
   config.registry = _registry || 'http://localhost:8123'
-  config.prefix = _prefix
+  config.prefix = _prefix || ''
+
+  if(config.prefix.slice(-1) !== '/') config.prefix += '/'
 
   router.root = _prefix || ''
 
