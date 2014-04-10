@@ -1,8 +1,8 @@
 var path = require('path')
   , http = require('http')
 
-var errors = require('./routes/errors')
-  , router = require('./routes/setup')
+var errors = require('./lib/routes/errors')
+  , router = require('./lib/routes/setup')
 
 var config = {}
 
