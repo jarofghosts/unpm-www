@@ -53,7 +53,8 @@ www().listen(1337)
 ```
 
 * `route` holds information like [routes](http://npm.im/routes)
-* `config` is a configuration object, currently with one key: "registry"
+* `config` is a configuration object, currently with keys: "registry" and
+"prefix" (as explained above)
 
 ## notes
 
