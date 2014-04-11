@@ -17,7 +17,7 @@ function unpm_www(_registry, _prefix) {
 
   if(config.prefix.slice(-1) !== '/') config.prefix += '/'
 
-  router.root = config.prefix
+  router.root = _prefix || ''
 
   return http.createServer(handler)
 }
