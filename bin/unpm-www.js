@@ -31,7 +31,7 @@ if(options.help) return help()
 
 port = options.port || 8999
 
-www(options.registry).listen(port)
+www(options.registry, options.prefix).listen(port)
 console.log('unpm-www listening on port ' + port)
 
 function version() {

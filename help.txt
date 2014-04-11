@@ -1,6 +1,7 @@
 ==============================================================
 
 --port, -p <port>         | Listen on <port>, defaults to 8999
+--prefix, -P <prefix>     | Put all routes behind <prefix>
 --registry, -r <registry> | Use <registry> for package data
 --version, -v             | Print version information
 --help, -h                | This thing
