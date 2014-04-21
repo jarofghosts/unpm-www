@@ -13,6 +13,8 @@ var noptions = {
   , prefix: String
   , registry: String
   , help: Boolean
+  , static: String
+  , title: String
 }
 
 var shorts = {
@@ -21,6 +23,8 @@ var shorts = {
   , r: ['--registry']
   , h: ['--help']
   , v: ['--version']
+  , s: ['--static']
+  , t: ['--title']
 }
 
 var options = nopt(noptions, shorts)
@@ -31,8 +35,11 @@ if(options.help) return help()
 
 port = options.port || 8999
 
-www(options.registry, options.prefix).listen(port)
-console.log('unpm-www listening on port ' + port)
+www(options.registry, options.prefix, options.title, options.static)
+    .listen(port)
+
+console.log('unpm-www listening on port ' + port +
+    (options.prefix ? ' at ' + options.prefix : ''))
 
 function version() {
   console.log(package.name + ' version ' + package.version)

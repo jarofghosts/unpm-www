@@ -11,9 +11,13 @@ unpm_www.handler = handler
 unpm_www.config = config
 module.exports = unpm_www
 
-function unpm_www(_registry, _prefix) {
+function unpm_www(_registry, _prefix, _title, _static_overrides) {
+  config.static_overrides = _static_overrides ?
+    path.resolve(_static_overrides) : null
+
   config.registry = _registry || 'http://localhost:8123'
   config.prefix = _prefix || ''
+  config.title = _title || 'unpm'
 
   if(config.prefix.slice(-1) !== '/') config.prefix += '/'
 

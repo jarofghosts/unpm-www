@@ -1,3 +1,19 @@
 img.author-avatar {
   max-width: 50px
 }
+
+.package-readme {
+  max-width: 768px;
+  background: #f0f0f0;
+  padding: 2em;
+}
+
+.package-readme h1 {
+  margin-top: 0px;
+  border-bottom: 2px solid;
+}
+
+.package-readme pre {
+  padding: 1em;
+  border-left: 2px solid #d8d8d8;
+}

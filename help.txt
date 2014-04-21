@@ -4,5 +4,7 @@
 --prefix, -P <prefix>     | Put all routes behind <prefix>
 --registry, -r <registry> | Use <registry> for package data
 --version, -v             | Print version information
+--static, -s <dir>        | Override static files from <dir>
+--title, -t <title>       | Set the title for your unpm-www
 --help, -h                | This thing
 
