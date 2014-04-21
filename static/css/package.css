@@ -2,6 +2,11 @@ img.author-avatar {
   max-width: 30px
 }
 
+.package-container {
+  margin: 0 2em;
+  padding: 1em 2em;
+}
+
 .package-info {
   font-size: 14px;
 }
@@ -22,7 +27,7 @@ img.author-avatar {
 }
 
 .package-info td {
-  padding: 0.5em 3em 0.5em 0;
+  padding: 0.5em 3em 0.5em 0.5em;
 }
 
 .package-info tr:nth-child(even) td {
