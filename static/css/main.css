@@ -15,6 +15,14 @@ a:hover {
   border-bottom: 1px solid;
 }
 
+a:active {
+  border-bottom: 2px solid;
+}
+
+a:visited {
+  border-bottom: 1px solid;
+}
+
 hr {
   color: #212121;
   background: #212121;
@@ -36,10 +44,4 @@ footer {
   background: #eaeaea;
   padding: 2em 1em 0.5em 1em;
   text-align: right;
-}
-
-h1 {
-  margin-top: 0px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid;
 }
