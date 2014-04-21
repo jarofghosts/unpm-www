@@ -9,9 +9,11 @@
   <body>
     <div class="package-container">
       <h2>{{ name }}</h1>
+
       <p>
         {{ description }}
       </p>
+
       <table class="package-info">
         <tr>
           <td><strong>Author</strong></td>
@@ -25,7 +27,7 @@
         <tr>
           <td><strong>Dependencies</strong></td>
           <td>
-            <ul>
+            <ul class="package-dependencies">
               {{#dependencies}}
               <li>
               <a href="{{ config.prefix }}package/{{ name }}">{{ name }}</a>
@@ -42,6 +44,18 @@
             <a href="{{ repository_www }}">{{ repository }}</a>
           </td>
         </tr>
+        {{#keywords.length}}
+        <tr>
+          <td><strong>Keywords</strong></td>
+          <td>
+            <ul class="package-keywords">
+              {{#keywords}}
+              <li>{{ . }}</li>
+              {{/keywords}}
+            </ul>
+          </td>
+        </tr>
+        {{/keywords.length}}
         {{#created}}
         <tr>
           <td><strong>Created</strong></td>
@@ -54,22 +68,10 @@
           <td>{{ last_modified }}</td>
         </tr>
         {{/last_modified}}
-        {{#keywords.length}}
-        <tr>
-          <td><strong>Keywords</strong></td>
-          <td>
-            <ul>
-              {{#keywords}}
-              <li>{{ . }}</li>
-              {{/keywords}}
-            </ul>
-          </td>
-        </tr>
-        {{/keywords.length}}
       </table>
 
-      <h3>Readme</h3>
-      <div class="package-readme">
+      <h3><a href="#readme">#</a> README</h3>
+      <div class="package-readme" id="readme">
         {{{ readme }}}
       </div>
     </div>

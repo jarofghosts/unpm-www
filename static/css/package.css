@@ -23,3 +23,14 @@ img.author-avatar {
   padding: 0.5em 3em 0.5em 0;
   border-bottom: 1px solid #d8d8d8;
 }
+
+.author-avatar {
+  vertical-align: middle;
+  margin-right: 1em;
+}
+
+.package-dependencies,
+.package-keywords {
+  list-style: square;
+  margin-bottom: 0;
+}
