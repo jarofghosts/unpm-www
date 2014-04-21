@@ -3,6 +3,7 @@ img.author-avatar {
 }
 
 .package-readme {
+  font: 14px Lucida Grande, sans-serif;
   max-width: 768px;
   background: #f0f0f0;
   padding: 2em;
@@ -16,4 +17,9 @@ img.author-avatar {
 .package-readme pre {
   padding: 1em;
   border-left: 2px solid #d8d8d8;
+}
+
+.package-info td {
+  padding: 0.5em 3em 0.5em 0;
+  border-bottom: 1px solid #d8d8d8;
 }

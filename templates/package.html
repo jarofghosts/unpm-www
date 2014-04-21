@@ -7,70 +7,71 @@
   </head>
     {{>header}}
   <body>
-    <h2>{{ name }}</h1>
-    <p>
-      {{ description }}
-    </p>
-    <h3>Details</h2>
-    <table class="package-info">
-      <tr>
-        <td><strong>Author</strong></td>
-        <td><img class="author-avatar" src="{{ author_avatar }}?d={{ default_avatar }}"> {{ author }}</td>
-      </tr>
-      <tr>
-        <td><strong>Version</strong></td>
-        <td>{{ version }}</td>
-      </tr>
-      {{#dependencies.length}}
-      <tr>
-        <td><strong>Dependencies</strong></td>
-        <td>
-          <ul>
-            {{#dependencies}}
-            <li>
-            <a href="{{ config.prefix }}package/{{ name }}">{{ name }}</a>
-            @ {{ version }}
-            </li>
-            {{/dependencies}}
-          </ul>
-        </td>
-      </tr>
-      {{/dependencies.length}}
-      <tr>
-        <td><strong>Repository</strong></td>
-        <td>
-          <a href="{{ repository_www }}">{{ repository }}</a>
-        </td>
-      </tr>
-      {{#created}}
-      <tr>
-        <td><strong>Created</strong></td>
-        <td>{{ created }}
-      </tr>
-      {{/created}}
-      {{#last_modified}}
-      <tr>
-        <td><strong>Last Updated</strong></td>
-        <td>{{ last_modified }}</td>
-      </tr>
-      {{/last_modified}}
-      {{#keywords.length}}
-      <tr>
-        <td><strong>Keywords</strong></td>
-        <td>
-          <ul>
-            {{#keywords}}
-            <li>{{ . }}</li>
-            {{/keywords}}
-          </ul>
-        </td>
-      </tr>
-      {{/keywords.length}}
-    </table>
+    <div class="package-container">
+      <h2>{{ name }}</h1>
+      <p>
+        {{ description }}
+      </p>
+      <table class="package-info">
+        <tr>
+          <td><strong>Author</strong></td>
+          <td><img class="author-avatar" src="{{ author_avatar }}?d={{ default_avatar }}"> {{ author }}</td>
+        </tr>
+        <tr>
+          <td><strong>Version</strong></td>
+          <td>{{ version }}</td>
+        </tr>
+        {{#dependencies.length}}
+        <tr>
+          <td><strong>Dependencies</strong></td>
+          <td>
+            <ul>
+              {{#dependencies}}
+              <li>
+              <a href="{{ config.prefix }}package/{{ name }}">{{ name }}</a>
+              @ {{ version }}
+              </li>
+              {{/dependencies}}
+            </ul>
+          </td>
+        </tr>
+        {{/dependencies.length}}
+        <tr>
+          <td><strong>Repository</strong></td>
+          <td>
+            <a href="{{ repository_www }}">{{ repository }}</a>
+          </td>
+        </tr>
+        {{#created}}
+        <tr>
+          <td><strong>Created</strong></td>
+          <td>{{ created }}
+        </tr>
+        {{/created}}
+        {{#last_modified}}
+        <tr>
+          <td><strong>Last Updated</strong></td>
+          <td>{{ last_modified }}</td>
+        </tr>
+        {{/last_modified}}
+        {{#keywords.length}}
+        <tr>
+          <td><strong>Keywords</strong></td>
+          <td>
+            <ul>
+              {{#keywords}}
+              <li>{{ . }}</li>
+              {{/keywords}}
+            </ul>
+          </td>
+        </tr>
+        {{/keywords.length}}
+      </table>
 
-    <h3>Readme</h3>
-    <div class="package-readme">
-      {{{ readme }}}
+      <h3>Readme</h3>
+      <div class="package-readme">
+        {{{ readme }}}
+      </div>
     </div>
     {{>footer}}
   </body>
