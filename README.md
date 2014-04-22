@@ -14,6 +14,9 @@ a web frontend for [&mu;npm](https://github.com/hayes/unpm)
 * `--port, -p <port>` Listen on `<port>`, defaults to `8999`
 * `--registry, -r <registry>` Use `<registry>` for package data, defaults to
 'http://localhost:8123'
+* `--static, -s <dir>` Use files in `<dir>` to override static files when
+serving requests. (will fall back to defaults as necessary)
+* `--title, -t <title>` Title the page `<title>`, defaults to "unpm"
 * `--version, -v` Print version information
 * `--help, -h` Print help text
 

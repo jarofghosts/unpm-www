@@ -23,9 +23,9 @@ a:visited {
   border-bottom: 1px solid;
 }
 
-hr {
-  color: #212121;
-  background: #212121;
+.main {
+  padding: 2em;
+  min-height: 500px;
 }
 
 header h1 {
