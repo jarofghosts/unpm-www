@@ -7,6 +7,11 @@ img.author-avatar {
   padding: 1em 2em;
 }
 
+.package-container h3 {
+  font-size: 3em;
+  border-bottom: dashed #eaeaea;
+}
+
 .package-info {
   font-size: 14px;
 }
@@ -66,4 +71,9 @@ img.author-avatar {
 .package-dependencies li,
 .package-keywords li {
   margin: 0.25em 0;
+}
+
+.package-readme h3 {
+  font-size: 2em;
+  border-bottom: none;
 }
