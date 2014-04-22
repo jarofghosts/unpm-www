@@ -8,7 +8,7 @@
     {{>header}}
   <body>
     <div class="package-container">
-      <h3>{{ name }}</h1>
+      <h1 class="main-header">{{ name }}</h1>
 
       <p>
         {{ description }}
@@ -70,7 +70,7 @@
         {{/last_modified}}
       </table>
 
-      <h3><a href="#readme">#</a> README</h3>
+      <h1 class="main-header"><a href="#readme">#</a> README</h1>
       <div class="package-readme" id="readme">
         {{{ readme }}}
       </div>
