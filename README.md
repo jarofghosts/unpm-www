@@ -1,7 +1,7 @@
 &mu;npm-www
 ====
 
-a web frontend for [&mu;npm](https://github.com/hayes/unpm)
+a web frontend for npm-like registries (like [&mu;npm](https://github.com/hayes/unpm))
 
 ## installation
 
