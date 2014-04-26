@@ -30,14 +30,31 @@
             <ul class="package-dependencies">
               {{#dependencies}}
               <li>
-              <a href="{{ config.prefix }}package/{{ name }}">{{ name }}</a>
-              @ {{ version }}
+                <a href="{{ config.prefix }}package/{{ name }}">{{ name }}</a>
+                @ {{ version }}
               </li>
               {{/dependencies}}
             </ul>
           </td>
         </tr>
         {{/dependencies.length}}
+        {{#dependents.list.length}}
+        <tr>
+          <td><strong>Dependents</strong></td>
+          <td>
+            <ul class="package-dependents">
+              {{#dependents.list}}
+              <li>
+                <a href="{{ config.prefix }}package/{{.}}">{{.}}</a>
+              </li>
+              {{/dependents.list}}
+            </ul>
+            {{#dependents.remain}}
+            ... and {{ dependents.remain }} more
+            {{/dependents.remain}}
+          </td>
+        </tr>
+        {{/dependents.list.length}}
         <tr>
           <td><strong>Repository</strong></td>
           <td>
