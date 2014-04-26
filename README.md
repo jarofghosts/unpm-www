@@ -22,14 +22,24 @@ serving requests. (will fall back to defaults as necessary)
 
 ## as a module
 
-yep, you can do that
+yep, you can do that:
 
 ```js
 var www = require('unpm-www')
 
-var server = www('http://registry.npmjs.org') // defaults to 'http://localhost:8123'
+var server = www('http://registry.npmjs.org')
 server.listen(8999) // tada!
 ```
+
+## api
+
+`unpm_www(registry, prefix, title, static) -> httpServer`
+
+* `registry` is the location of the npm-like registry you wish to use for
+package data, default is `'http://localhost:8123'`
+* `prefix` will put all routes behind that given prefix
+* `title` is simply the title for the page header, default is `'unpm'`
+* `static` is a directory with files to override static files
 
 ## extending
 
