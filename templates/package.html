@@ -2,8 +2,8 @@
   <head>
     <title>{{ name }} &lt; {{ config.registry }}</title>
     {{>styles}}
-    <link rel="stylesheet" href="{{ config.prefix }}css/package.css">
-    <link rel="stylesheet" href="{{ config.prefix }}css/github.css">
+    <link rel="stylesheet" href="../css/package.css">
+    <link rel="stylesheet" href="../css/github.css">
   </head>
     {{>header}}
   <body>
@@ -30,7 +30,7 @@
             <ul class="package-dependencies">
               {{#dependencies}}
               <li>
-                <a href="{{ config.prefix }}package/{{ name }}">{{ name }}</a>
+                <a href="../package/{{ name }}">{{ name }}</a>
                 @ {{ version }}
               </li>
               {{/dependencies}}
@@ -45,7 +45,7 @@
             <ul class="package-dependents">
               {{#dependents.list}}
               <li>
-                <a href="{{ config.prefix }}package/{{.}}">{{.}}</a>
+                <a href="../package/{{.}}">{{.}}</a>
               </li>
               {{/dependents.list}}
             </ul>
