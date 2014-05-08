@@ -1,6 +1,6 @@
 {
   "name": "unpm-www",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "web frontend for unpm",
   "main": "index.js",
   "bin": {
