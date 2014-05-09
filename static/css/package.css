@@ -61,6 +61,7 @@ img.author-avatar {
   padding-top: 0.5em;
 }
 
+.package-dependents,
 .package-dependencies,
 .package-keywords {
   list-style: square;
