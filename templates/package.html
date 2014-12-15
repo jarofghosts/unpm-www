@@ -1,94 +1,92 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>{{ name }} &lt; {{ config.registry }}</title>
     {{>head}}
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/package.css">
     <link rel="stylesheet" href="../css/github.css">
   </head>
-    {{>header}}
   <body>
+    {{>header}}
     <div class="package-container">
-      <h1 class="main-header">{{ name }}</h1>
+      <div class="package-heading">
+        <h1 class="main-header">{{ name }}</h1>
+        <h2 class="package-description">
+          {{ description }}
+        </h2>
+      </div>
 
-      <p>
-        {{ description }}
-      </p>
+      <div class="package-info">
+        <section>
+          <span class="package-detail">Version <strong>{{ version }}</strong></span>
+          <span class="package-detail">Published <strong>{{last_modified}}</strong></span>
+        </section>
 
-      <table class="package-info">
-        <tr>
-          <td><strong>Author</strong></td>
-          <td><img class="author-avatar" src="{{ author_avatar }}?d={{ default_avatar }}"> {{ author }}</td>
-        </tr>
-        <tr>
-          <td><strong>Version</strong></td>
-          <td>{{ version }}</td>
-        </tr>
         {{#dependencies.length}}
-        <tr>
-          <td><strong>Dependencies</strong></td>
-          <td>
-            <ul class="package-dependencies">
-              {{#dependencies}}
-              <li>
-                <a href="../package/{{ name }}">{{ name }}</a>
-                @ {{ version }}
-              </li>
-              {{/dependencies}}
-            </ul>
-          </td>
-        </tr>
+        <section>
+          <h3>Dependencies</h3>
+          <ul class="package-dependencies">
+            {{#dependencies}}
+            <li>
+              <a href="../package/{{ name }}">{{ name }}</a> @ {{ version }}
+            </li>
+            {{/dependencies}}
+          </ul>
+        </section>
         {{/dependencies.length}}
-        {{#dependents.list.length}}
-        <tr>
-          <td><strong>Dependents</strong></td>
-          <td>
-            <ul class="package-dependents">
-              {{#dependents.list}}
-              <li>
-                <a href="../package/{{.}}">{{.}}</a>
-              </li>
-              {{/dependents.list}}
-            </ul>
-            {{#dependents.remain}}
-            ... and <a href="../browse/depended/{{ name }}">{{ dependents.remain }} more</a>
-            {{/dependents.remain}}
-          </td>
-        </tr>
-        {{/dependents.list.length}}
-        <tr>
-          <td><strong>Repository</strong></td>
-          <td>
-            <code><a href="{{ repository_www }}">{{ repository }}</a></code>
-          </td>
-        </tr>
-        {{#keywords.length}}
-        <tr>
-          <td><strong>Keywords</strong></td>
-          <td>
-            <ul class="package-keywords">
-              {{#keywords}}
-              <li>{{ . }}</li>
-              {{/keywords}}
-            </ul>
-          </td>
-        </tr>
-        {{/keywords.length}}
-        {{#created}}
-        <tr>
-          <td><strong>Created</strong></td>
-          <td>{{ created }}
-        </tr>
-        {{/created}}
-        {{#last_modified}}
-        <tr>
-          <td><strong>Last Updated</strong></td>
-          <td>{{ last_modified }}</td>
-        </tr>
-        {{/last_modified}}
-      </table>
 
-      <h1 class="main-header"><a href="#readme">#</a> README</h1>
+        {{#dependents.list.length}}
+        <section>
+          <h3>Dependents</h3>
+
+          <ul class="package-dependents">
+            {{#dependents.list}}
+            <li>
+              <a href="../package/{{.}}">{{.}}</a>
+            </li>
+            {{/dependents.list}}
+          </ul>
+          {{#dependents.remain}}
+          <p>
+            &hellip; and
+            <a href="../browse/depended/{{ name }}">
+            {{ dependents.remain }} more
+            </a>
+          </p>
+          {{/dependents.remain}}
+        </section>
+        {{/dependents.list.length}}
+
+        <section>
+          <h3>Author</h3>
+          <img class="author-avatar" src="{{ author_avatar }}?d={{ default_avatar }}" alt="{{author}}">
+          <p><span class="package-detail">{{ author }}</span></p>
+        </section>
+
+        <section>
+          <span class="package-detail">
+            <strong><a href="{{ repository_www }}" class="repository-link">{{ repository }}</a></strong>
+          </span>
+        </section>
+
+        {{#keywords.length}}
+        <section>
+          <span class="package-detail">
+            Keywords: <strong>{{keywords}}</strong>
+          </span>
+        </section>
+        {{/keywords.length}}
+
+        {{#created}}
+        <section>
+          <span class="package-detail">
+            Created <strong>{{ created }}</strong>
+          </span>
+        </section>
+        {{/created}}
+      </div>
+
+      <h1 class="readme-header main-header"><a href="#readme">README</a></h1>
       <div class="package-readme" id="readme">
         {{{ readme }}}
       </div>

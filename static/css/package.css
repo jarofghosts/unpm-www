@@ -1,36 +1,61 @@
 img.author-avatar {
-  max-width: 30px
+  max-width: 90px
 }
 
 .package-container {
-  margin: 0 2em;
-  padding: 1em 2em;
+  /*clearfix*/
+  overflow: auto;
+  zoom: 1;
+
+  padding: 20px;
 }
 
 .main-header {
   font-size: 3em;
-  border-bottom: dashed #eaeaea;
+  font-weight: 200;
+  letter-spacing: -2px;
+  margin: 0;
+  margin-left: -0.1em;
 }
 
-.package-info {
-  font-size: 14px;
+.package-description {
+  font-weight: 100;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  margin-top: 0;
+}
+
+.package-detail {
+  color: #444;
+  display: block;
+  font-weight: 100;
+  font-size: 1.25em;
+  font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+.readme-link:hover {
+  text-decoration: none;
+  border: none;
 }
 
 .package-readme {
-  max-width: 768px;
+  line-height: 1.4;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
 }
 
 .package-readme pre {
   padding: 1em;
   border-left: 2px solid #d8d8d8;
-  background: #eaeaea;
+  background: #ececec;
 }
 
 .package-info {
-  width: 768px;
   margin-bottom: 2em;
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 .package-info td {
@@ -46,6 +71,10 @@ img.author-avatar {
   margin-right: 1em;
 }
 
+.repository-link {
+     word-break: break-word;
+}
+
 .package-readme h1 {
   margin-top: 0px;
   padding-bottom: 5px;
@@ -58,18 +87,79 @@ img.author-avatar {
 .package-readme h4,
 .package-readme h5,
 .package-readme h6 {
+  color: #444;
+  font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
   padding-top: 0.5em;
 }
 
 .package-dependents,
-.package-dependencies,
-.package-keywords {
-  list-style: square;
+.package-dependencies {
+  list-style: disc;
   margin: 0;
-  padding: 0 1.25em;
+  padding-left: 50px;
 }
 
 .package-dependencies li,
 .package-keywords li {
   margin: 0.25em 0;
+}
+
+.package-readme li {
+  line-height: 1.25;
+}
+
+.package-readme code {
+  background-color: #ececec;
+  font-size: 1em;
+  font-family: Consolas, "Liberation Mono", Menlo, Monaco, Courier, monospace;
+}
+
+.package-readme img {
+  max-width: 100%;
+}
+
+pre {
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+@media (min-width: 1024px) {
+  .package-container {
+    margin: 0 auto;
+    max-width: 1150px;
+    padding: 15px 30px;
+  }
+
+  .package-heading,
+  .package-readme {
+    width: 75%;
+    float: left;
+  }
+
+  .package-readme {
+    overflow: auto;
+    padding-right: 10px;
+    max-width: 768px;
+  }
+
+  .main-header {
+    margin-top: 15px;
+  }
+
+  .package-info {
+    float: right;
+    margin: 0;
+    margin-top: 60px;
+    width: 25%;
+  }
+
+  .package-dependents,
+  .package-dependencies {
+    padding: 0 1.5em;
+  }
+
+  .readme-header {
+    display: none;
+  }
 }
