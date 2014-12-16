@@ -13,7 +13,8 @@ module.exports = unpm_www
 
 function unpm_www(_registry, _prefix, _title, _static_overrides) {
   config.static_overrides = _static_overrides ?
-    path.resolve(_static_overrides) : null
+    path.resolve(_static_overrides) :
+    null
 
   config.registry = _registry || 'http://localhost:8123'
   config.prefix = _prefix || ''
@@ -32,7 +33,8 @@ function handler(req, res) {
   res.setHeader('x-frame-options', 'deny')
   res.setHeader(
       'content-security-policy'
-    , "default-src 'self'; img-src *; frame-src 'none'; object-src 'none'"
+    , "default-src 'self'; img-src *; frame-src 'none'; object-src 'none';" +
+        " style-src *;"
   )
 
   if(!route) return errors.not_found(req, res)
