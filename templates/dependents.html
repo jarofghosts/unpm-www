@@ -2,16 +2,15 @@
   <head>
     <title>Packages depending on {{ name }} &lt; {{ config.registry }}</title>
     {{>head}}
-    <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/dependents.css">
+    <link rel="stylesheet" href="css/dependents.css">
   </head>
     {{>header}}
   <body>
-    <h1 class="main-header">Packages depending on <a href="../../package/{{ name }}">{{ name }}</a></h1>
+    <h1 class="main-header">Packages depending on <a href="package/{{ name }}">{{ name }}</a></h1>
     <div class="container">
       {{#dependents}}
       <div class="dep">
-        <a href="../../package/{{ name }}">{{ name }}</a> {{ description }}
+        <a href="package/{{ name }}">{{ name }}</a> {{ description }}
       </div>
       {{/dependents}}
     </div>
